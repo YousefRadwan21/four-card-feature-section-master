@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-blue: hsl(212, 86%, 64%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-Very-Dark-Blue: hsl(234, 12%, 34%);
+    --clr-Very-Grayish-Blue: hsl(229, 6%, 66%);
+    --clr-Very-Light-Gray: hsl(0, 0%, 98%);
+    --ff: 'Poppins', sans-serif;
+    --fs: 0.9375rem;
+    --fw-l: 200;
+    --fw-m: 400;
+    --fw-b: 600;
+    --box-shadow: 0 0 1em  var(--clr-Very-Grayish-Blue);
+}
+body {
+    font-family: var(--ff);
+    font-size: var(--fs);
+    background-color: var(--clr-Very-Light-Gray);
+    color: var(--clr-Very-Grayish-Blue);
+    height: 100%;
+}
+
+header {
+    text-align: center;
+}
+h1 {
+    color: var(--clr-Very-Grayish-Blue);
+    font-weight: var(--fw-l);
+}
+span {
+    display: block;
+    color: var(--clr-Very-Dark-Blue);
+    font-weight: var(--fw-b);
+}
+.contanier {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto ;
+    grid-template-areas: 
+        "card1 card1 card2 card2 card4 card4"
+        "card1 card1 card3 card3 card4 card4"
+        ;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+    margin: 2em auto;
+    padding: 2em;
+}
+
+.card {
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 300px;
+    padding: 1em;
+    border: 0;
+    border-radius: 2px;
+    text-align: left;
+}
+.card1 {
+    border-top: 10px solid var(--clr-cyan);
+    grid-area: card1;
+}
+.card2 {
+    border-top: 10px solid var(--clr-red);
+    grid-area: card2;
+}
+.card3 {
+    border-top: 10px solid var(--clr-orange);
+    grid-area: card3;
+}
+.card4 {
+    border-top: 10px solid var(--clr-blue);
+    grid-area: card4;
+}
+.card-img{
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+}
+.card-title {
+    color: var(--clr-Very-Dark-Blue);
+    font-weight: var(--fw-b);
+}
+.card-body {
+    font-size: 1rem;
+    font-weight: var(--fw-m);
+}
+footer {
+    text-align: center;
+}
+@media screen and (max-width: 769px) {
+    .contanier {
+        grid-template-columns: auto auto auto auto;
+        grid-template-areas: 
+        "card1 card2 card2 card4"
+        "card1 card3 card3 card4";
+        padding: 0;
+        margin: 1em auto;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:520px) {
+    .contanier {
+        display: flex;
+        flex-direction: column;
+    }
+    footer {
+        font-size: 0.8rem;
+        font-weight: var(--fw-l);
+    }
+}
+
